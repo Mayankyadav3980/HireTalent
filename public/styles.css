@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.m-container-text{
+    /* background-color: red; */
+    margin-top: 15%;
+}
+
+.home-pg-img{
+    height: 500px;
+    width: 500px;
+    transform: translate(-80px,-100px);
+    /* border-radius: 5px; */
+    /* transform: rotate(-30deg); */
+}
+
+.card{
+    margin: 10px;
+    padding: 10px;
+    margin-top: 40px;
+    width: 20%;
+}
+.card-header{
+    border-bottom: 1px solid white;
+}
+.skill{
+    border: 1px solid white;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 3px;
+}
+
+#job-detail{
+    background-color: rgb(33, 37, 41);
+    color:white;
+    margin-top: 5%;
+    padding: 3rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: large;
+}
