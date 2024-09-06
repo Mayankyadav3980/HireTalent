@@ -1,0 +1,98 @@
+<div class="container" style="width: 50%">
+  <h1 class="text-center mt-4">Update Job</h1>
+  <form action="/jobs" method="post">
+    <div class="form-group mt-3">
+      <label for="job-role" class="form-label"> Job Role</label>
+      <input type="text" class="form-control" id="job-role" />
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="job-location" class="form-label">Job Location</label>
+      <select class="form-select" name="job-location" id="job-location">
+        <option selected>select location</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Bangalore">Bangalore</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="company-name" class="form-label">Company Name</label>
+      <input type="text" class="form-control" id="company-name" />
+    </div>
+    <div class="form-group mt-3">
+      <label for="salary" class="form-label"> Salary</label>
+      <input type="number" class="form-control" id="salary" />
+    </div>
+    <div class="form-group mt-3">
+      <label for="total-vaccancies" class="form-label"> Total Vacancies</label>
+      <input type="number" class="form-control" id="total-vaccancies" />
+    </div>
+    <div class="form-group mt-3">
+      <label for="apply-by" class="form-label"> Apply By</label>
+      <input type="date" class="form-control" id="apply-by" />
+    </div>
+
+    <label for="" class="form-label mt-3">Skills</label>
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="dsa"
+            id="dsa"
+          />
+          <label class="form-check-label" for="dsa"> DSA </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="MongoDB"
+            id="MongoDB"
+          />
+          <label class="form-check-label" for="MongoDB"> MongoDB </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Expressjs"
+            id="Expressjs"
+          />
+          <label class="form-check-label" for="Expressjs"> Express.js </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Reactjs"
+            id="Reactjs"
+          />
+          <label class="form-check-label" for="Reactjs"> React.js </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Nodejs"
+            id="Nodejs"
+          />
+          <label class="form-check-label" for="Nodejs"> Node.js </label>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center">
+      <button type="submit" class="btn btn-dark mt-3" style="width: 50%">
+        Update
+      </button>
+    </div>
+  </form>
+</div>

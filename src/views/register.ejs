@@ -1,0 +1,81 @@
+<div class="container" style="margin-top: 10%; font-size: 1.5rem;">
+  <div class="row">
+    <div class="col">
+      <img
+        src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1725494400&semt=ais_hybrid"
+        alt=""
+        width="600px"
+        height="600px"
+        style="margin-top: -8%;"
+      />
+    </div>
+    <div class="col">
+      <form action="/register" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="enter your name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label text-dark">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="enter your email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label text-dark">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="enter your password"
+            required
+          />
+        </div>
+
+        <div class="form-check form-check-inline mb-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="userType"
+            id="inlineRadio1"
+            value="jobSeeker"
+          />
+          <label class="form-check-label" for="inlineRadio1"
+            >I'm a Job Seeker</label
+          >
+        </div>
+        <div class="form-check form-check-inline mb-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="userType"
+            id="inlineRadio2"
+            value="recruiter"
+          />
+          <label class="form-check-label" for="inlineRadio2"
+            >I'm a Recruiter</label
+          >
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-lg btn-dark" style="width: 30%">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
