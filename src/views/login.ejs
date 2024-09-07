@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 10%; font-size: 1.5rem;">
+<div class="container" style="margin-top: 10%; font-size: 1.5rem; ">
   <div class="row">
     <div class="col">
       <img
@@ -8,7 +8,12 @@
         height="500px"
       />
     </div>
-    <div class="col">
+    <div class="col pt-5" >
+      <% if(errorMessage){ %>
+        <div class="alert alert-danger" role="alert">
+          Invalid Credentials
+        </div>
+      <% } %>
       <form action="/login" method="post">
         <div class="mb-3">
           <label for="email" class="form-label text-dark">Email</label>
@@ -16,6 +21,7 @@
             type="email"
             class="form-control"
             id="email"
+            name="email"
             placeholder="enter your email"
             required
           />
@@ -26,6 +32,7 @@
             type="password"
             class="form-control"
             id="password"
+            name="password"
             placeholder="enter your password"
             required
           />

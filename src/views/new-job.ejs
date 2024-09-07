@@ -1,14 +1,14 @@
-<div class="container" style="width: 50%">
+<div class="container p-3 m-5 mx-auto" style="width: 50%; border:1px solid black; border-radius: 5px;">
   <h1 class="text-center mt-4">Post a new Job</h1>
   <form action="/jobs" method="post">
     <div class="form-group mt-3">
       <label for="job-role" class="form-label"> Job Role</label>
-      <input type="text" class="form-control" id="job-role" />
+      <input type="text" class="form-control" id="job-role" name="jobRole" />
     </div>
 
     <div class="form-group mt-3">
       <label for="job-location" class="form-label">Job Location</label>
-      <select class="form-select" name="job-location" id="job-location">
+      <select class="form-select" name="jobLocation" id="job-location">
         <option selected>select location</option>
         <option value="Delhi">Delhi</option>
         <option value="Mumbai">Mumbai</option>
@@ -19,23 +19,54 @@
 
     <div class="form-group mt-3">
       <label for="company-name" class="form-label">Company Name</label>
-      <input type="text" class="form-control" id="company-name" />
+      <input
+        type="text"
+        class="form-control"
+        id="company-name"
+        name="companyName"
+      />
     </div>
     <div class="form-group mt-3">
       <label for="salary" class="form-label"> Salary</label>
-      <input type="number" class="form-control" id="salary" />
-    </div>
-    <div class="form-group mt-3">
-      <label for="total-vaccancies" class="form-label"> Total Vacancies</label>
-      <input type="number" class="form-control" id="total-vaccancies" />
-    </div>
-    <div class="form-group mt-3">
-      <label for="apply-by" class="form-label"> Apply By</label>
-      <input type="date" class="form-control" id="apply-by" />
+      <input type="number" class="form-control" id="salary" name="salary" />
     </div>
 
-    <label for="" class="form-label mt-3">Skills</label>
     <div class="row">
+      <div class="col">
+        <div class="form-group mt-3">
+          <label for="total-vaccancies" class="form-label">
+            Total Vacancies</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="total-vaccancies"
+            name="totalVacancies"
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="apply-by" class="form-label"> Apply By</label>
+          <input
+            type="date"
+            class="form-control"
+            id="apply-by"
+            name="applyBy"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <label for="" class="form-label mt-3">Skills</label>
+        <select class="form-select" name="skills" id="skills" multiple>
+          <!-- <option selected> select skills</option> -->
+          <option value="dsa">dsa</option>
+          <option value="mern">mern</option>
+          <option value="be">be</option>
+          <option value="fe">fe</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- <div class="row">
       <div class="col">
         <div class="form-check">
           <input
@@ -43,6 +74,7 @@
             type="checkbox"
             value="dsa"
             id="dsa"
+            name="dsa"
           />
           <label class="form-check-label" for="dsa"> DSA </label>
         </div>
@@ -52,6 +84,7 @@
             type="checkbox"
             value="MongoDB"
             id="MongoDB"
+            name="MongoDB"
           />
           <label class="form-check-label" for="MongoDB"> MongoDB </label>
         </div>
@@ -63,6 +96,7 @@
             type="checkbox"
             value="Expressjs"
             id="Expressjs"
+            name="Expressjs"
           />
           <label class="form-check-label" for="Expressjs"> Express.js </label>
         </div>
@@ -72,6 +106,8 @@
             type="checkbox"
             value="Reactjs"
             id="Reactjs"
+            name="Reactjs"
+
           />
           <label class="form-check-label" for="Reactjs"> React.js </label>
         </div>
@@ -83,11 +119,12 @@
             type="checkbox"
             value="Nodejs"
             id="Nodejs"
+            name="Nodejs"
           />
           <label class="form-check-label" for="Nodejs"> Node.js </label>
         </div>
-      </div>
-    </div>
+      </div> 
+    </div> -->
 
     <div style="text-align: center">
       <button type="submit" class="btn btn-dark mt-3" style="width: 50%">

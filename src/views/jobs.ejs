@@ -1,6 +1,6 @@
 <div class="d-flex">
   <% jobs.forEach( job => { %>
-  <div class="card bg-dark text-light p-2 m-3 mt-5" style="width: 20%;">
+  <div class="card bg-dark text-light p-2 m-3 mt-5" style="width: 22%;">
     <div class="card-header text-center">
       <h2><%= job.company %></h2>
     </div>
@@ -8,13 +8,15 @@
       <p>Job Role: <%= job.role %></p>
       <p>Location: <%= job.location %></p>
       <p>Salary: <%= job.salary %></p>
+      <p>Vacancies: <%= job.vacancies %></p>
+      <p>Apply By: <%= job.applyBy %></p>
       <!-- <p></p> -->
-      <p>Skills:</p>
+      <span>Skills:</span>
       <% job.skills.forEach(skill => { %>
-      <span class="btn btn-outline-light m-1"> <%= skill %></span>
+      <span class="btn btn-sm btn-outline-light m-1"> <%= skill %></span>
       <% }) %>
     </div>
-    <button class="btn btn-light">View details</button>
+    <a href="/job/<%= job.id %>" class="btn btn-light">View details</a>
   </div>
   <% }) %>
 </div>

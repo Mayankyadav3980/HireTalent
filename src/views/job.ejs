@@ -1,29 +1,25 @@
 <div id="job-detail">
   <h1 class="mb-5">
-    SDE opportunity at Gurugram HR Ind remote at coding ninjas
+    <%= job.role %> opportunity in <%= job.location %>  at <%= job.company %>
   </h1>
   <div class="row">
     <div class="col">
-      <p>
-        Coding Ninjas <br />
-        Tech: SDE
-      </p>
+      <p>Role: <%= job.role %></p>
       <i></i>
-      <p>loc:Gurugram</p>
+      <p>Location: <%= job.location %></p>
       <i></i>
-      <p>10lpa</p>
+      <p>Salary: <%= job.salary %></p>
       <i></i>
-      <p>Apply by 30Aug</p>
+      <p>Apply by: <%= job.applyBy %></p>
       <i></i>
-      <p>Number of openings: 5</p>
+      <p>Number of openings: <%= job.vacancies %></p>
       <i></i>
-      <p>Applicants: 1</p>
+      <p>Applicants: Yet to update??</p>
 
-      <p>Skills</p>
-      <span class="skill">MongoDB</span>
-      <span class="skill">Express.js</span>
-      <span class="skill">React</span>
-      <span class="skill">Nodejs</span><br />
+      <span>Skills: </span>
+      <% job.skills.forEach( skill => { %>
+        <span class="skill"><%= skill %> </span>
+      <% }) %>
     </div>
     <div class="col">
       <img
@@ -41,6 +37,8 @@
   >
     Apply Now
   </button>
+  <a href="/update-job/<%= job.id %>" class="btn btn-lg btn-light mt-3">Update Job</a>
+  <button class="btn btn-lg btn-outline-danger mt-3">Delete</button>
 
   <div
     class="modal fade"
