@@ -1,15 +1,21 @@
 <div class="container" style="width: 50%">
   <h1 class="text-center mt-4">Update Job</h1>
-  <form action="/jobs" method="post">
+  <form action="/update-job/<%=job.id%>" method="post">
     <div class="form-group mt-3">
       <label for="job-role" class="form-label"> Job Role</label>
-      <input type="text" class="form-control" id="job-role" />
+      <input
+        type="text"
+        class="form-control"
+        id="job-role"
+        name="role"
+        value="<%= job.role %>"
+      />
     </div>
 
     <div class="form-group mt-3">
       <label for="job-location" class="form-label">Job Location</label>
-      <select class="form-select" name="job-location" id="job-location">
-        <option selected>select location</option>
+      <select class="form-select" name="location" id="job-location">
+        <option selected><%= job.location %></option>
         <option value="Delhi">Delhi</option>
         <option value="Mumbai">Mumbai</option>
         <option value="Pune">Pune</option>
@@ -19,23 +25,57 @@
 
     <div class="form-group mt-3">
       <label for="company-name" class="form-label">Company Name</label>
-      <input type="text" class="form-control" id="company-name" />
+      <input
+        type="text"
+        class="form-control"
+        id="company-name"
+        name="company"
+        value="<%= job.company %>"
+      />
     </div>
     <div class="form-group mt-3">
       <label for="salary" class="form-label"> Salary</label>
-      <input type="number" class="form-control" id="salary" />
+      <input
+        type="text"
+        class="form-control"
+        id="salary"
+        name="salary"
+        value="<%= job.salary %>"
+      />
     </div>
     <div class="form-group mt-3">
       <label for="total-vaccancies" class="form-label"> Total Vacancies</label>
-      <input type="number" class="form-control" id="total-vaccancies" />
+      <input
+        type="number"
+        class="form-control"
+        id="total-vaccancies"
+        name="vacancies"
+        value="<%= job.vacancies %>"
+      />
     </div>
     <div class="form-group mt-3">
       <label for="apply-by" class="form-label"> Apply By</label>
-      <input type="date" class="form-control" id="apply-by" />
+      <input
+        type="text"
+        class="form-control"
+        id="apply-by"
+        name="applyBy"
+        value="<%= job.applyBy %>"
+      />
     </div>
 
-    <label for="" class="form-label mt-3">Skills</label>
-    <div class="row">
+    <label for="skills" class="form-label mt-3">Skills</label>
+    <select name="skills" id="skills" class="form-select" multiple>
+     <% if(typeof(job.skills) != "string"){  %>
+      <!-- <% console.log(job.skills.length); %> -->
+        <% job.skills.forEach( skill => { %>
+          <option selected value="<%= skill %>"><%= skill %></option>
+        <% }) %> 
+      <% }else{ %>
+        <option selected value="<%= job.skills %>"><%= job.skills %></option>
+      <% } %>
+    </select>
+    <!-- <div class="row">
       <div class="col">
         <div class="form-check">
           <input
@@ -43,6 +83,7 @@
             type="checkbox"
             value="dsa"
             id="dsa"
+            checked
           />
           <label class="form-check-label" for="dsa"> DSA </label>
         </div>
@@ -87,7 +128,7 @@
           <label class="form-check-label" for="Nodejs"> Node.js </label>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div style="text-align: center">
       <button type="submit" class="btn btn-dark mt-3" style="width: 50%">

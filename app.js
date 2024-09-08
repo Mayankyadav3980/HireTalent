@@ -33,12 +33,10 @@ app.get("/create-job", jobsController.newJob);
 app.post("/jobs", jobsController.postNewJob);
 
 //Update a existing job
-app.get('/update-job/:id', (req, res)=>{
-  res.render('update-job');
-})
-
+app.get('/update-job/:id', jobsController.getUpdateJob)
+app.post("/update-job/:id", jobsController.postUpdateJob);
 //Delete a specific job
-
+app.get('/delete-job/:id', jobsController.deleteJob)
 
 //View details of a specific job
 app.get('/job/:id', jobsController.viewDetailsPage)

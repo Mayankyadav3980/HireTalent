@@ -36,7 +36,7 @@ export default class JobModel {
     salary,
     totalVacancies,
     applyBy,
-    skills,
+    skills
   }) {
     // console.log(company, role, location, salary, skills);
 
@@ -54,5 +54,28 @@ export default class JobModel {
   }
   static getJobById(id) {
     return this.jobs.find((job) => job.id == id);
+  }
+
+  static updateJobById(id, { company, role, location, salary, vacancies, applyBy, skills }){
+    let idx = this.jobs.findIndex( obj => obj.id == id);
+    console.log(this.jobs[idx]);
+    
+    this.jobs[idx] = {
+      id,
+      company,
+      role,
+      location,
+      salary,
+      vacancies,
+      applyBy,
+      skills
+    };
+    console.log(this.jobs[idx]);
+    console.log(typeof(this.jobs[idx].skills));
+  }
+
+  static deleteJob(id){
+    let idx = this.jobs.findIndex( job => job.id == id);
+    this.jobs.splice(idx, 1);
   }
 }

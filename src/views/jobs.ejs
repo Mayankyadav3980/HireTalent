@@ -1,6 +1,6 @@
 <div class="d-flex">
   <% jobs.forEach( job => { %>
-  <div class="card bg-dark text-light p-2 m-3 mt-5" style="width: 22%;">
+  <div class="card bg-dark text-light p-2 m-3 mt-5" style="width: 22%">
     <div class="card-header text-center">
       <h2><%= job.company %></h2>
     </div>
@@ -12,9 +12,12 @@
       <p>Apply By: <%= job.applyBy %></p>
       <!-- <p></p> -->
       <span>Skills:</span>
-      <% job.skills.forEach(skill => { %>
+      <% if(typeof(job.skills) != "string"){ %> 
+        <% job.skills.forEach(skill => { %>
       <span class="btn btn-sm btn-outline-light m-1"> <%= skill %></span>
-      <% }) %>
+      <% })}else{ %> 
+      <span class="btn btn-sm btn-outline-light m-1"> <%= job.skills %></span>
+     <% } %>
     </div>
     <a href="/job/<%= job.id %>" class="btn btn-light">View details</a>
   </div>
