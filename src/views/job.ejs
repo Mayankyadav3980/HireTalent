@@ -14,7 +14,7 @@
       <i></i>
       <p>Number of openings: <%= job.vacancies %></p>
       <i></i>
-      <p>Applicants: Yet to update??</p>
+      <p>Applicants: <%= job.applicants.length %></p>
 
       <span>Skills: </span>
       <% if(typeof(job.skills) != "string"){  %>
@@ -23,6 +23,22 @@
       <% })}else{ %>
         <span class="skill"><%= job.skills %> </span> 
        <% } %>
+        
+       <div class="mt-4">
+         <button
+    class="btn btn-lg btn-light mt-3 text-center"
+    data-bs-toggle="modal"
+    data-bs-target="#apply-form"
+  >
+    Apply Now
+  </button>
+  <a href="/update-job/<%= job.id %>" class="btn btn-lg btn-outline-light mt-3 mx-3">Update Job</a>
+  <a href="/jobs/<%= job.id %>/applicants" class="btn btn-lg btn-outline-light mt-3 mx-3">View all applicants</a>
+
+    <button type="button" onclick="deleteProduct('<%= job.id %>')" class="btn btn-lg btn-outline-danger mt-3">Delete</button>
+
+       </div>
+        
     </div>
     <div class="col">
       <img
@@ -33,15 +49,9 @@
     </div>
   </div>
 
-  <button
-    class="btn btn-lg btn-outline-light mt-3 text-center"
-    data-bs-toggle="modal"
-    data-bs-target="#apply-form"
-  >
-    Apply Now
-  </button>
-  <a href="/update-job/<%= job.id %>" class="btn btn-lg btn-light mt-3 mx-3">Update Job</a>
-  <a href="/delete-job/<%=job.id %>" class="btn btn-lg btn-outline-danger mt-3">Delete</button>
+ 
+  <!-- </form> -->
+  <!-- <a href="/delete-job/<%=job.id %>" method="DELETE" class="btn btn-lg btn-outline-danger mt-3">Delete</a> -->
 
   <div
     class="modal fade"
@@ -64,13 +74,14 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form action="" >
+          <form action="/apply/<%= job.id %>" method="post"  enctype="multipart/form-data">
             <div class="mb-3">
               <label for="name" class="form-label text-dark">Name</label>
               <input
                 type="text"
                 class="form-control"
                 id="name"
+                name="name"
                 placeholder="enter your name"
               />
             </div>
@@ -80,6 +91,7 @@
                 type="email"
                 class="form-control"
                 id="email"
+                name="email"
                 placeholder="enter your email"
               />
             </div>
@@ -89,6 +101,7 @@
                 type="number"
                 class="form-control"
                 id="number"
+                name="number"
                 placeholder="enter your number"
               />
             </div>
@@ -98,7 +111,8 @@
                 type="file"
                 class="form-control"
                 id="file-upload"
-                accept="images/*"
+                name="resume"
+               accept="images/*"
               />
             </div>
             

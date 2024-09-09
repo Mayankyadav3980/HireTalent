@@ -1,0 +1,26 @@
+
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Resume</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% applicants.forEach( e => { %>
+               <tr>
+                <td><%= e.name %></td>
+                <td><%= e.email %></td>
+                <td><%= e.number %></td>
+                <td>
+                    <a href="<%= e.resume %>" target="_blank" style="max-width: 100px;">
+                </td>
+            </tr> 
+            <% }) %>
+            
+        </tbody>
+    </table>
+</div>

@@ -3,6 +3,7 @@ import path from 'path';
 import expressEjsLayouts from 'express-ejs-layouts';
 import JobsController from './src/controllers/job.controller.js';
 import UsersController from './src/controllers/user.controller.js';
+import {uploadResume} from './src/middlewares/resume-upload.middleware.js'
 
 const app = express();
 app.set('view engine', 'ejs')
@@ -26,21 +27,30 @@ app.post("/login", usersController.postLogin);
 
 //Jobs related routes
 
-//Read all jobs
+//Retrieve all job listing
 app.get('/jobs', jobsController.getJobs)
-//Create a new job
+
+//Create a new job listing
 app.get("/create-job", jobsController.newJob);
 app.post("/jobs", jobsController.postNewJob);
 
-//Update a existing job
+//Retrieve a specific job listing by id
+app.get('/jobs/:id', jobsController.viewDetailsPage)
+
+//Update a specific job listing by id
 app.get('/update-job/:id', jobsController.getUpdateJob)
-app.post("/update-job/:id", jobsController.postUpdateJob);
+app.post("/jobs/:id", jobsController.postUpdateJob);
+
 //Delete a specific job
-app.get('/delete-job/:id', jobsController.deleteJob)
+app.post('/delete-job/:id', jobsController.deleteJob)
 
-//View details of a specific job
-app.get('/job/:id', jobsController.viewDetailsPage)
 
+//Retrieve all applicants for a specific job listing
+app.get('/jobs/:id/applicants', jobsController.getApplicantsByJobId)
+
+
+//Apply to a specific job listing by job id,
+app.post( '/apply/:id', uploadResume.single('resume'), jobsController.addApplicant)
 
 app.listen(3000, ()=>{
     console.log('server started on port 3000');

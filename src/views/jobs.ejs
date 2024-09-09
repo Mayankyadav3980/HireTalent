@@ -1,3 +1,6 @@
+<% if(jobs.length == 0){ %>
+<div class="alert alert-secondary mt-5 text-center fs-2" role="alert">No Jobs to show😑</div>
+<% }else{ %> 
 <div class="d-flex">
   <% jobs.forEach( job => { %>
   <div class="card bg-dark text-light p-2 m-3 mt-5" style="width: 22%">
@@ -12,14 +15,15 @@
       <p>Apply By: <%= job.applyBy %></p>
       <!-- <p></p> -->
       <span>Skills:</span>
-      <% if(typeof(job.skills) != "string"){ %> 
-        <% job.skills.forEach(skill => { %>
+      <% if(typeof(job.skills) != "string"){ %> <% job.skills.forEach(skill => {
+      %>
       <span class="btn btn-sm btn-outline-light m-1"> <%= skill %></span>
-      <% })}else{ %> 
+      <% })}else{ %>
       <span class="btn btn-sm btn-outline-light m-1"> <%= job.skills %></span>
-     <% } %>
+      <% } %>
     </div>
-    <a href="/job/<%= job.id %>" class="btn btn-light">View details</a>
+    <a href="/jobs/<%= job.id %>" class="btn btn-light">View details</a>
   </div>
   <% }) %>
 </div>
+<% } %>
