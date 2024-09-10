@@ -35,7 +35,7 @@ export default class JobModel {
           name: "Vivek",
           email: "vivek@gmail.com",
           number: 9999999999,
-          resume: "this is resume",
+          resume: "/resumes/1725904349315-MayankYadav_Resume.pdf",
         },
         {
           name: "Vivek2",
@@ -113,8 +113,8 @@ export default class JobModel {
     this.jobs[idx].applicants.push({ name, email, number, resume: resumeUrl });
   }
 
-  static getApplicantsByJobId(jobId){
-    let job = this.jobs.find( job => job.id == jobId);
+  static getApplicantsByJobId(jobId) {
+    let job = this.jobs.find((job) => job.id == jobId);
     return job.applicants;
   }
 }

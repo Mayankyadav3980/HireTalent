@@ -25,18 +25,18 @@
        <% } %>
         
        <div class="mt-4">
-         <button
-    class="btn btn-lg btn-light mt-3 text-center"
-    data-bs-toggle="modal"
-    data-bs-target="#apply-form"
-  >
-    Apply Now
-  </button>
-  <a href="/update-job/<%= job.id %>" class="btn btn-lg btn-outline-light mt-3 mx-3">Update Job</a>
-  <a href="/jobs/<%= job.id %>/applicants" class="btn btn-lg btn-outline-light mt-3 mx-3">View all applicants</a>
-
-    <button type="button" onclick="deleteProduct('<%= job.id %>')" class="btn btn-lg btn-outline-danger mt-3">Delete</button>
-
+          <button
+          class="btn btn-lg btn-light mt-3 text-center"
+          data-bs-toggle="modal"
+          data-bs-target="#apply-form"
+          >
+          Apply Now
+        </button>
+        <% if(userEmail) { %>
+        <a href="/update-job/<%= job.id %>" class="btn btn-lg btn-outline-light mt-3 mx-3">Update Job</a>
+        <a href="/jobs/<%= job.id %>/applicants" class="btn btn-lg btn-outline-light mt-3 ">View all applicants</a>
+        <button type="button" onclick="deleteProduct('<%= job.id %>')" class="btn btn-lg btn-outline-danger mt-3">Delete Job</button>
+        <% } %>
        </div>
         
     </div>
@@ -83,6 +83,7 @@
                 id="name"
                 name="name"
                 placeholder="enter your name"
+                
               />
             </div>
             <div class="mb-3">
@@ -112,7 +113,7 @@
                 class="form-control"
                 id="file-upload"
                 name="resume"
-               accept="images/*"
+               
               />
             </div>
             
@@ -129,7 +130,7 @@
           >
             Close
           </button>
-          <button type="button" class="btn btn-outline-dark">Save changes</button>
+          <!-- <button type="button" class="btn btn-outline-dark">Save changes</button> -->
         </div>
       </div>
     </div>

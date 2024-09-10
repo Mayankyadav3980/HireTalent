@@ -16,7 +16,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div class="container">
-            <a href="#" class="navbar-brand ml-3">HireTalent</a>
+            <a href="/" class="navbar-brand ml-3">HireTalent</a>
             <button
           class="navbar-toggler"
           type="button"
@@ -39,16 +39,26 @@
             <!-- <li class="navbar-item">
               <a href="" class="nav-link">Recruiter</a>
             </li> -->
-            <li class="navbar-item">
+            <% if(locals.userEmail) { %>
+              <li class="navbar-item"></li>
               <a href="/create-job" class="nav-link">Post a Job</a>
             </li>
+              <li class="navbar-item"></li>
+              <a href="/logout" class="nav-link">Logout</a>
+            </li>
+            <% }else{ %>
             <li class="navbar-item">
               <a href="/register" class="nav-link">Register</a>
             </li>
             <li class="navbar-item">
               <a href="/login" class="nav-link">LogIn</a>
             </li>
-            <li class="nav-item dropdown">
+            <% } %>
+             
+            
+           
+
+            <!-- <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -66,9 +76,10 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </li>
               </ul>
-            </li>
+            </li> -->
+
           </ul>
-          <form class="d-flex" role="search">
+          <!-- <form class="d-flex" role="search">
             <input
               class="form-control me-2"
               type="search"
@@ -78,7 +89,7 @@
             <button class="btn btn-outline-light" type="submit">
               Search
             </button>
-          </form>
+          </form> -->
         </div>
          
         

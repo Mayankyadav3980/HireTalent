@@ -1,16 +1,15 @@
 var users = [];
 
 export default class UserModel{
-    constructor(id, name, email, password, userType){
+    constructor(id, name, email, password){
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.userType = userType;
     }
 
-    static add(name, email, password, userType){
-        const newUser  = new UserModel( users.length+1, name, email, password, userType);
+    static add(name, email, password){
+        const newUser  = new UserModel( users.length+1, name, email, password);
         users.push(newUser);
     }
 
