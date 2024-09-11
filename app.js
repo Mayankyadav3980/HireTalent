@@ -23,7 +23,6 @@ app.use(session({
     cookie: { secure:false}
 }));
 app.use(cookieParser());
-app.use(setLastVisit);
 
 const jobsController = new JobsController();
 const usersController = new UsersController();
@@ -43,7 +42,7 @@ app.get("/logout", usersController.logout)
 //Jobs related routes
 
 //Retrieve all job listing
-app.get('/jobs', jobsController.getJobs)
+app.get("/jobs", setLastVisit,jobsController.getJobs);
 
 //Create a new job listing
 app.get("/create-job", auth, jobsController.newJob);
